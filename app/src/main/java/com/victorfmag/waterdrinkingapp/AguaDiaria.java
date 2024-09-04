@@ -38,9 +38,10 @@ public class AguaDiaria {
         int coposBebidos = 0;
         for (Copo copo : copos) {
             if (!copo.isCheio()) {
+                System.out.println("1 copo");
                 coposBebidos++;
             }
         }
-        return (float) (coposBebidos * volumeCopoMl) / 1000;
+        return (float) (coposBebidos * volumeCopoMl);
     }
 }

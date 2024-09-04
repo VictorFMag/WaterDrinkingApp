@@ -32,11 +32,13 @@ public class CopoViewModel extends ViewModel {
 
     public void beber() {
         this.bebido = true;
+        copoObjeto.setCheio(false);
         imagemCopo.setValue(R.drawable.baseline_water_drop_24);
     }
 
     public void desfazer() {
         this.bebido = false;
+        copoObjeto.setCheio(true);
         imagemCopo.setValue(R.drawable.baseline_water_drop_24_blue);
     }
 }

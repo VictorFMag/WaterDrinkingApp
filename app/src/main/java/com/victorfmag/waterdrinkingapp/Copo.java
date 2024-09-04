@@ -13,6 +13,10 @@ public class Copo {
         return cheio;
     }
 
+    public void setCheio(boolean cheio) {
+        this.cheio = cheio;
+    }
+
     public int getVolumeMl() {
         return volumeMl;
     }

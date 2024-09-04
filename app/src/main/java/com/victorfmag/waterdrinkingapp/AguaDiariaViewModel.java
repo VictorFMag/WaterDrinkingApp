@@ -37,8 +37,8 @@ public class AguaDiariaViewModel extends ViewModel {
         }
     }
 
-    private void atualizarDados() {
-        float metaLitros = aguaDiaria.getCopos().size() * (200f / 1000f);
+    public void atualizarDados() {
+        float metaLitros = aguaDiaria.getCopos().size() * (200f);
         float litrosBebidos = aguaDiaria.litrosBebidosAteAgora();
         float litrosFaltando = metaLitros - litrosBebidos;
 

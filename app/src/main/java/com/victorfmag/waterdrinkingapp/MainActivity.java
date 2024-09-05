@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.widget.EditText;
 
 import com.victorfmag.waterdrinkingapp.databinding.ActivityMainBinding;
@@ -36,4 +37,23 @@ public class MainActivity extends AppCompatActivity {
         GridLayoutManager layoutManager = new GridLayoutManager(this, numberOfColumns, GridLayoutManager.HORIZONTAL, false);
         binding.recyclerViewCopos.setLayoutManager(layoutManager);
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        // Exemplo de como salvar uma String
+        outState.putParcelable("aguaDiariaViewModelSavedInstance", (Parcelable) aguaDiariaViewModel);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        if (savedInstanceState != null) {
+            AguaDiariaViewModel aguaDiariaViewModel1 =
+                    (AguaDiariaViewModel) savedInstanceState.getSerializable("aguaDiariaViewModelSavedInstance");
+        }
+    }
+
 }
